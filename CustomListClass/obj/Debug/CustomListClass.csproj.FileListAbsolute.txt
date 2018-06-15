@@ -1,0 +1,7 @@
+C:\projects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe.config
+C:\projects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.exe
+C:\projects\CustomListClass\CustomListClass\bin\Debug\CustomListClass.pdb
+C:\projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csprojAssemblyReference.cache
+C:\projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.csproj.CoreCompileInputs.cache
+C:\projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.exe
+C:\projects\CustomListClass\CustomListClass\obj\Debug\CustomListClass.pdb

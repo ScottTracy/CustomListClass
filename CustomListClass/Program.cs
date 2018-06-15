@@ -10,6 +10,12 @@ namespace CustomListClass
     {
         static void Main(string[] args)
         {
-        }List
+            List<int> list1 = new List<int>() { 1, 2,};
+            List<int> list2 = new List<int>() { 5, 6,};
+            string sample = "foo" + "bar";
+            Console.WriteLine(sample);
+            Console.WriteLine(list[3]);
+            Console.ReadLine();
+        }
     }
 }
