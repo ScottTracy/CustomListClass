@@ -1,20 +1,23 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomList;
 
 
-namespace CustomListClassTest
+
+
+namespace CustomListTest
 {
     [TestClass]
     public class TestAdd
     {
         [TestMethod]
-        public void  AddValueToFirstIndex()
+        public void AddValueToFirstIndex()
         {
             //Arrange
-            List<int> list = new List<int>();
+            CustomList<int> list = new CustomList<int>();
             int value = 5;
             //Act
-            list.add(value);
+            list.Add(value);
             //Assert
             Assert.AreEqual(list[0], value);
         }
@@ -22,37 +25,38 @@ namespace CustomListClassTest
         public void AddValueToSecondIndex()
         {
             //Arrange
-            List<int> list = new List<int>();
+            CustomList<int> list = new CustomList<int>();
             int firstValue = 5;
             int secondValue = 7;
             //Act
-            list.add(firstValue);
-            list.add(secondValue);
+            list.Add(firstValue);
+            list.Add(secondValue);
             //Assert
-           
+
             Assert.AreEqual(list[0], firstValue);
         }
         [TestMethod]
         public void AddValueToSecondIndex2()
         {
             //Arrange
-            List<int> list = new List<int>();
+            CustomList<int> list = new CustomList<int>();
             int firstValue = 5;
             int secondValue = 7;
             //Act
-            list.add(firstValue);
-            list.add(secondValue);
+            list.Add(firstValue);
+            list.Add(secondValue);
             //Assert
             Assert.AreEqual(list[1], secondValue);
-           
+        }
+
         [TestMethod]
         public void AddString()
         {
             //Arrange
-            List<int> list = new List<int>();
+            CustomList<int> list = new CustomList<int>();
             int value = 5;
             //Act
-            list.add(value);
+            list.Add(value);
             //Assert
             Assert.AreEqual(list[0], value);
         }
@@ -60,12 +64,12 @@ namespace CustomListClassTest
         public void AddArray()
         {
             //Arrange
-            List<int[]> list = new List<int[]>;
+            CustomList<int[]> list = new CustomList<int[]>();
             int[] array1 = { 1, 2 };
             int[] array2 = { 3, 4 };
             //Act
-            list.add(array1);
-            list.add(array2);
+            list.Add(array1);
+            list.Add(array2);
             //Assert
             Assert.AreEqual(list[0], array1);
 
@@ -74,15 +78,29 @@ namespace CustomListClassTest
         public void AddArrayCheck2()
         {
             //Arrange
-            List<int[]> list = new List<int[]>;
+            CustomList<int[]> list = new CustomList<int[]>();
             int[] array1 = { 1, 2 };
             int[] array2 = { 3, 4 };
             //Act
-            list.add(array1);
-            list.add(array2);
+            list.Add(array1);
+            list.Add(array2);
             //Assert
             Assert.AreEqual(list[1], array2);
 
+        }
+        [TestMethod]
+        public void AddGetCount()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            int value = 5;
+            //Act
+            list.Add(value);
+            int expectedresult = 5;
+            Assert.AreEqual(list.Count, expectedresult);
+
+
+            
         }
 
     }

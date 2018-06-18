@@ -1,7 +1,7 @@
-﻿using System;
+﻿using CustomList;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CustomListClassTest
+namespace CustomListTest
 {
     [TestClass]
     public class TestPlusOperator
@@ -10,11 +10,11 @@ namespace CustomListClassTest
         public void PlusTwoLists()
         {
             //Arrange
-            List<int> list1 = new List<int>() { 1, 2, };
-            List<int> list2 = new List<int>() { 5, 6, };
-            List<int> result = new List<int>();
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, };
+            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
+            CustomList<int> result = new CustomList<int>();
             //Act
-            list1 + list2 = result;
+            result = list1 + list2;
             int expectedResult = 6;
             //Assert
             Assert.AreEqual(result[3], expectedResult);
@@ -23,53 +23,67 @@ namespace CustomListClassTest
         public void PlusTwoLists2()
         {
             //Arrange
-            List<int> list1 = new List<int>() { 1, 2, };
-            List<int> list2 = new List<int>() { 5, 6, };
-            List<int> result = new List<int>();
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, };
+            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
+            CustomList<int> result = new CustomList<int>();
             //Act
-            list1 + list2 = result;
+            result = list1 + list2 ;
             int expectedResult = 2;
             //Assert
             Assert.AreEqual(result[1], expectedResult);
         }
         [TestMethod]
-        public void PlusTwoLists2()
+        public void PlusTwoLists3()
         {
             //Arrange
-            List<int> list1 = new List<int>() { 1, 2, };
-            List<int> list2 = new List<int>() { 5, 6, };
-            List<int> result = new List<int>();
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, };
+            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
+            CustomList<int> result = new CustomList<int>();
             //Act
-            list2 + list1 = result;
+            result = list2 + list1 ;
             int expectedResult = 2;
             //Assert
             Assert.AreEqual(result[3], expectedResult);
         }
         [TestMethod]
-        public void PlusTwoLists2()
+        public void PlusTwoLists4()
         {
             //Arrange
-            List<int> list1 = new List<int>() { 1, 2, };
-            List<int> list2 = new List<int>() { 5, 6, };
-            List<int> result = new List<int>();
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, };
+            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
+            CustomList<int> result = new CustomList<int>();
             //Act
-            list2 + list1 = result;
+            result = list2 + list1;
             int expectedResult = 6;
             //Assert
             Assert.AreEqual(result[1], expectedResult);
         }
         [TestMethod]
-        public void PlusTwoLists2()
+        public void PlusTwoUnequalLists()
         {
             //Arrange
-            List<int> list1 = new List<int>() { 1, 2, 3 };
-            List<int> list2 = new List<int>() { 5, 6, };
-            List<int> result = new List<int>();
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
+            CustomList<int> result = new CustomList<int>();
             //Act
-            list1 + list2 = result;
+            result = list1 + list2;
             int expectedResult = 3;
             //Assert
             Assert.AreEqual(result[4], expectedResult);
         }
+        [TestMethod]
+        public void PlusTwoListsWithArrays()
+        {
+            //Arrange
+            CustomList<string[]> list1 = new CustomList<string[]> (){ { "From", "Here" }, { "To", "There" } };
+            CustomList<string[]> list2 = new CustomList<string[]> (){ { "In", "Out" }, { "Under", "Over" } };
+            CustomList<string[]> result = new CustomList<string[]>();
+            //Act
+            result = list1 + list2;
+            string[] expectedResult = { "In", "Out" };
+            //Assert
+            Assert.AreEqual(result[2]);
+        }
+
     }
 }

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B0BE4746-4B0B-4CED-8E4D-492354CFB082}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>CustomListClass</RootNamespace>
-    <AssemblyName>CustomListClass</AssemblyName>
+    <RootNamespace>CustomList</RootNamespace>
+    <AssemblyName>CustomList</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -4,17 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CustomListClass
+namespace CustomList
 {
     class Program
     {
         static void Main(string[] args)
         {
-            List<int> list1 = new List<int>() { 1, 2,};
+            
+            CustomList<int> list1 = new CustomList<int>() { 1, 2,};
             List<int> list2 = new List<int>() { 5, 6,};
-            string sample = "foo" + "bar";
-            Console.WriteLine(sample);
-            Console.WriteLine(list[3]);
+            
+            Console.WriteLine(list1.Count);
+            Console.WriteLine();
             Console.ReadLine();
         }
     }

@@ -1,7 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CustomList;
 
-namespace CustomListClassTest
+namespace CustomListTest
 {
     [TestClass]
     public class TestRemove
@@ -10,7 +11,7 @@ namespace CustomListClassTest
         public void RemoveIntWithInt()
         {
             //Arrange
-            List<int> list = new List<int>() { 1, 2, 3, 4 };
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
             //Act
             list.Remove(1);
             int expectedResult = 2;
@@ -22,7 +23,7 @@ namespace CustomListClassTest
         public void RemoveIntWithInt2()
         {
             //Arrange
-            List<int> list = new List<int>() { 1, 2, 3, 4 };
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
             //Act
             list.Remove(1);
             int expectedResult = 3;
@@ -35,7 +36,7 @@ namespace CustomListClassTest
         public void RemoveIntWithException()
         {
             //Arrange
-            List<int> list = new List<int>() { 1, 2, 3, 4 };
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
             //Act
             list.Remove(1);
             Console.WriteLine(list[3]);
@@ -44,7 +45,7 @@ namespace CustomListClassTest
         public void RemoveIntWithVar()
         {
             //Arrange
-            List<int> list = new List<int>() { 1, 2, 3, 4 };
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
             int value = 2;
             //Act
             list.Remove(value);
@@ -57,7 +58,7 @@ namespace CustomListClassTest
         public void RemoveIntWithIndex()
         {
             //Arrange
-            List<int> list = new List<int>() { 1, 2, 3, 4 };
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
             //Act
             list.Remove(list[0]);
             int expectedResult = 2;
@@ -68,7 +69,7 @@ namespace CustomListClassTest
         public void RemoveStringWithString()
         {
             //Arrange
-            List<string> list = new List<string>() { "From", "Here", "To", "There" };
+            CustomList<string> list = new CustomList<string>() { "From", "Here", "To", "There" };
             //Act
             list.Remove("From");
             string expectedResult = "Here";
@@ -81,7 +82,7 @@ namespace CustomListClassTest
         public void RemoveStringWithException()
         {
             //Arrange
-            List<string> list = new List<string>() { "From", "Here", "To", "There" };
+            CustomList<string> list = new CustomList<string>() { "From", "Here", "To", "There" };
             //Act
             list.Remove("Here");
             Console.WriteLine(list[3]);
@@ -90,7 +91,7 @@ namespace CustomListClassTest
         public void RemoveStringsWithArray()
         {
             //Arrange
-            List<string[]> list = new List<string[]>() { { "From", "Here" },{ "To", "There" } };
+            CustomList<string[]> list = new CustomList<string[]>() { { "From", "Here" },{ "To", "There" } };
 
             string[] array = { "From" , "Here" };
             //Act
@@ -98,6 +99,18 @@ namespace CustomListClassTest
             string[] expectedResult = { "To", "there" };
             //Assert
             Assert.AreEqual(expectedResult, list[0]);
+        }
+        [TestMethod]
+        public void RemoveIntWithInt3()
+        {
+            //Arrange
+            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            //Act
+            list.Remove(1);
+            int expectedResult = 3;
+            //Assert
+            Assert.AreEqual(list.Count, expectedResult);
+
         }
 
 
