@@ -97,6 +97,7 @@ namespace CustomListTest
             //Act
             list.Add(value);
             int expectedresult = 5;
+            //Assert
             Assert.AreEqual(list.Count, expectedresult);
 
 
