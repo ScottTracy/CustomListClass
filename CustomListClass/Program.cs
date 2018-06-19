@@ -15,9 +15,12 @@ namespace CustomList
             CustomList<int> result = new CustomList<int>();
             //Act
             result = list1 + list2;
-            Console.WriteLine(result);
-            Console.ReadLine();
+            foreach(int number in result)
+            {
+                Console.WriteLine(number);
 
+            }
+            Console.ReadLine();
 
         }
     }

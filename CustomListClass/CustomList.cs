@@ -17,7 +17,6 @@ namespace CustomList
     {
         private const int _defaultCapacity = 4;
         private T[] _items;
-        private T[] arr = new T[4];
         private int size;
         private int _version;
         static readonly T[] emptyArray = new T[0];
@@ -142,15 +141,16 @@ namespace CustomList
         }
         public IEnumerator GetEnumerator()
         {
-            return (IEnumerator)this;
+            for(int i=0;i< _count; i++)
+            {
+                yield return _items[i];
+            }
         }
 
         public CustomList(IEnumerable<T> collection)
         {
             // if (collection == null)
             //      ThrowHelper.ThrowArgumentNullException(ExceptionArgument.collection);
-            //  Contract.EndContractBlock();
-
             ICollection<T> c = collection as ICollection<T>;
             if (c != null)
             {
