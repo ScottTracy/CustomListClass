@@ -21,7 +21,7 @@ namespace CustomList
         private int size;
         private int _version;
         static readonly T[] emptyArray = new T[0];
-        static int _count;
+        private int _count;
 
         public T this[int index]
         {
@@ -97,7 +97,10 @@ namespace CustomList
             _items[size++] = item;
             _version++;
             _count++;
+            _count = size;
+            
         }
+       
         private void EnsureCapacity(int minimum)
         {
             if (_items.Length < minimum)
@@ -192,7 +195,7 @@ namespace CustomList
         }
         public bool Remove(T item)
         {
-            int index = IndexOf(_items,item,size);
+            int index = IndexOf(_items, item, size);
             if (index >= 0)
             {
                 RemoveAt(index);
@@ -221,16 +224,16 @@ namespace CustomList
                 }
                 _index = -1;
             }
-             return _index;
-        
+            return _index;
+
         }
         public void RemoveAt(int index)
         {
             if ((uint)index >= (uint)size)
             {
-               // ThrowHelper.ThrowArgumentOutOfRangeException();
+                // ThrowHelper.ThrowArgumentOutOfRangeException();
             }
-            
+
             size--;
             if (index < size)
             {
@@ -238,15 +241,41 @@ namespace CustomList
             }
             _count = size;
             _version++;
-
-
-
-
-
-
-
-
+        }
+        public static CustomList<T> operator+ (CustomList<T> listA, CustomList<T> listB)
+        { CustomList<T> _list = new CustomList<T>();
+            for (int i = 0; listA.Count > i; i++)
+            {
+                _list.Add(listA[i]);
+            }
+            for (int i = 0; listB.Count > i; i++)
+            {
+                _list.Add(listB[i]);
+            }
+            return _list;
 
 
         }
-}   }
+        public static CustomList<T> operator -(CustomList<T> listA, CustomList<T> listB)
+        {
+            CustomList<T> _list = new CustomList<T>(); for (int i = 0; listA.Count > i; i++)
+            {
+                _list.Add(listA[i]);
+            }
+            for (int i = listB.Count-1; i>=0; i--)
+            {
+                for (int j = listA.Count - 1; j >= 0; j--)
+                {
+                    if (Equals(listA[j], listB[i]))
+                    {
+                        _list.RemoveAt(j);
+                    }
+                }
+            }
+            return _list;
+
+        }
+
+    }
+
+}   

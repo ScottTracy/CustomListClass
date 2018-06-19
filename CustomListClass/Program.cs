@@ -10,13 +10,13 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            CustomList<int> list = new CustomList<int>() { 1, 2, 3, 4 };
+            CustomList<int> list1 = new CustomList<int>() { 1, 2, 3 };
+            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
+            CustomList<int> result = new CustomList<int>();
             //Act
-            list.Remove(1);
-
-            Console.WriteLine(list.Count);
+            result = list1 + list2;
+            Console.WriteLine(result);
             Console.ReadLine();
-
 
 
         }

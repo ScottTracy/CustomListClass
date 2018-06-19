@@ -53,8 +53,8 @@ namespace CustomListTest
         public void AddString()
         {
             //Arrange
-            CustomList<int> list = new CustomList<int>();
-            int value = 5;
+            CustomList<string> list = new CustomList<string>();
+            string value = "string";
             //Act
             list.Add(value);
             //Assert
