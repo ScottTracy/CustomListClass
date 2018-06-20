@@ -53,6 +53,7 @@
     <Compile Include="TestRemove.cs" />
     <Compile Include="TestPlusOperator.cs" />
     <Compile Include="TestMinusOperator.cs" />
+    <Compile Include="TestToString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

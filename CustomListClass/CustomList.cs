@@ -29,7 +29,7 @@ namespace CustomList
 
                 if (index >= size)
                 {
-                    //      ThrowHelper.ThrowArgumentOutOfRangeException();
+                    //      ThrowArgumentOutOfRangeException();
                 }
                 return _items[index];
             }
@@ -38,7 +38,7 @@ namespace CustomList
             {
                 if (index >= size)
                 {
-                    //    ThrowHelper.ThrowArgumentOutOfRangeException();
+                    //  ThrowArgumentOutOfRangeException();
                 }
                 _items[index] = value;
                 _version++;
@@ -68,7 +68,7 @@ namespace CustomList
             {
                 if (value < size)
                 {
-                    //ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument.value);
+                    //ThrowArgumentOutOfRangeException(ExceptionArgument.value);
 
                 }
                 if (value != _items.Length)
@@ -90,6 +90,9 @@ namespace CustomList
                 }
             }
         }
+
+        public object Current => throw new NotImplementedException();
+
         public void Add(T item)
         {
             if (size == _items.Length) EnsureCapacity(size + 1);
@@ -97,9 +100,9 @@ namespace CustomList
             _version++;
             _count++;
             _count = size;
-            
+
         }
-    
+
         private void EnsureCapacity(int minimum)
         {
             if (_items.Length < minimum)
@@ -115,74 +118,10 @@ namespace CustomList
             }
         }
 
-
-
-
-
-        public bool MoveNext()
-        {
-
-            return (true);
-        }
-
-
-        public void Reset()
-        {
-        }
-
-
-        public object Current
-        {
-            get
-            {
-                T current = default(T);
-                return current;
-            }
-        }
-        public IEnumerator GetEnumerator()
-        {
-            for(int i=0;i< _count; i++)
-            {
-                yield return _items[i];
-            }
-        }
-
-        public CustomList(IEnumerable<T> collection)
-        {
-            // if (collection == null)
-            //      ThrowHelper.ThrowArgumentNullException(ExceptionArgument.collection);
-            ICollection<T> c = collection as ICollection<T>;
-            if (c != null)
-            {
-                int count = c.Count;
-                if (count == 0)
-                {
-                    _items = emptyArray;
-                }
-                else
-                {
-                    _items = new T[count];
-                    c.CopyTo(_items, 0);
-                    size = count;
-                }
-            }
-            else
-            {
-                size = 0;
-                _items = emptyArray;
-                using (IEnumerator<T> enumerator = collection.GetEnumerator())
-                {
-                    while (enumerator.MoveNext())
-                    {
-                        Add(enumerator.Current);
-                    }
-                }
-            }
-        }
         public CustomList(int capacity)
         {
-            //   if (capacity < 0) ThrowHelper.ThrowArgumentOutOfRangeException(ExceptionArgument.capacity, ExceptionResource.ArgumentOutOfRange_NeedNonNegNum);
-            //   Contract.EndContractBlock();
+            //   if (capacity < 0) ThrowArgumentOutOfRangeException(ExceptionArgument.capacity, ExceptionResource.ArgumentOutOfRange_NeedNonNegNum);
+
 
             if (capacity == 0)
                 _items = emptyArray;
@@ -231,7 +170,7 @@ namespace CustomList
         {
             if (index >= size)
             {
-                // ThrowHelper.ThrowArgumentOutOfRangeException();
+                // ThrowArgumentOutOfRangeException();
             }
 
             size--;
@@ -242,8 +181,9 @@ namespace CustomList
             _count = size;
             _version++;
         }
-        public static CustomList<T> operator+ (CustomList<T> listA, CustomList<T> listB)
-        { CustomList<T> _list = new CustomList<T>();
+        public static CustomList<T> operator +(CustomList<T> listA, CustomList<T> listB)
+        {
+            CustomList<T> _list = new CustomList<T>();
             for (int i = 0; listA.Count > i; i++)
             {
                 _list.Add(listA[i]);
@@ -262,7 +202,7 @@ namespace CustomList
             {
                 _list.Add(listA[i]);
             }
-            for (int i = listB.Count-1; i>=0; i--)
+            for (int i = listB.Count - 1; i >= 0; i--)
             {
                 for (int j = listA.Count - 1; j >= 0; j--)
                 {
@@ -276,6 +216,36 @@ namespace CustomList
 
         }
 
+
+        public override String ToString()
+        {
+            String result = String.Empty;
+            foreach (T item in this)
+            {
+                if (String.IsNullOrEmpty(result))
+                    result += item.ToString();
+                else
+                    result += String.Format("{0}", item);
+            }
+            return result;
+        }
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < size; i++)
+            {
+                yield return _items[i];
+            }
+        }
+
+        public bool MoveNext()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Reset()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }   
