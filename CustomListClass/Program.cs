@@ -10,17 +10,7 @@ namespace CustomList
     {
         static void Main(string[] args)
         {
-            CustomList<int> list1 = new CustomList<int>() { 1, 2, 3 };
-            CustomList<int> list2 = new CustomList<int>() { 5, 6, };
-            CustomList<int> result = new CustomList<int>();
-            //Act
-            result = list1 + list2;
-            foreach(int number in result)
-            {
-                Console.WriteLine(number);
-
-            }
-            Console.ReadLine();
+         
 
         }
     }

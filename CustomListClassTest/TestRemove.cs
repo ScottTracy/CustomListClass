@@ -87,19 +87,7 @@ namespace CustomListTest
             list.Remove("Here");
             Console.WriteLine(list[3]);
         }
-        [TestMethod]
-        public void RemoveStringsWithArray()
-        {
-            //Arrange
-     //       CustomList<string[]> list = new CustomList<string[]>() { { "From", "Here" },{ "To", "There" } };
-
-            string[] array = { "From" , "Here" };
-            //Act
-      //     list.Remove(array);
-            string[] expectedResult = { "To", "there" };
-            //Assert
-       //     Assert.AreEqual(expectedResult, list[0]);
-        }
+       
         [TestMethod]
         public void RemoveIntWithInt3()
         {

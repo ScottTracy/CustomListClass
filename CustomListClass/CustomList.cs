@@ -99,7 +99,7 @@ namespace CustomList
             _count = size;
             
         }
-       
+    
         private void EnsureCapacity(int minimum)
         {
             if (_items.Length < minimum)
@@ -229,7 +229,7 @@ namespace CustomList
         }
         public void RemoveAt(int index)
         {
-            if ((uint)index >= (uint)size)
+            if (index >= size)
             {
                 // ThrowHelper.ThrowArgumentOutOfRangeException();
             }

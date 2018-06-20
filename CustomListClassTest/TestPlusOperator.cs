@@ -75,9 +75,9 @@ namespace CustomListTest
         //public void PlusTwoListsWithArrays()
         //{
             //Arrange
-           // CustomList<string[,]> list1 = new CustomList<string[,]> (){ { "From", "Here" }, { "To", "There" } };
-          //  CustomList<string[,]> list2 = new CustomList<string[,]> (){ { "In", "Out" }, { "Under", "Over" } };
-          //  CustomList<string[,]> result = new CustomList<string[,]>();
+           // CustomList<string[]> list1 = new CustomList<string[]> { { "From", "Here" }, { "To", "There" } };
+          //  CustomList<string[]> list2 = new CustomList<string[]> (){ { "In", "Out" }, { "Under", "Over" } };
+          //  CustomList<string[]> result = new CustomList<string[]>();
             //Act
           //  result = list1 + list2;
           //  string[,] expectedResult = { "In", "Out" };
